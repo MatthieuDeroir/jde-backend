@@ -32,7 +32,7 @@ app.use(cors());
 //POST
 app.post("/upload", (req, res) => {
   const user = req.body.user;
-  const newpath = __dirname + "/../frontend/public/media/";
+  const newpath = __dirname + "/../Project-Couchet/public/media/";
   const file = req.files.file;
   const hashedName = req.body.fileName;
   const format = req.body.format;
@@ -55,7 +55,7 @@ app.post("/delete", (req, res) => {
     format = ""
     sep = ""
   }
-  const directoryPath = __dirname + "/../frontend/public/media/"
+  const directoryPath = __dirname + "/../Project-Couchet/public/media/"
   if (fileName != "file") {
     fs.unlink(directoryPath + fileName + sep + format, (err) => {
       if (err) {
